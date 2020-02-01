@@ -1,0 +1,113 @@
+/* CSS document for index.html */ 
+
+
+body {
+    font-size: 20px;
+    font-family: arial;
+    text-align:center;
+}
+
+h1 {
+    font-size:50px;
+
+}
+section {
+    margin: 5vh 12vw;
+}
+
+.header {
+    margin: 5vh 12vw;
+    height: 250px;
+    overflow: hidden;
+}
+
+.header > img {
+    width: 100%;
+    height: auto;
+    opacity: 50;
+}
+
+.header > h1 {
+    font-size: 70px;
+    top: 6vh;
+    left: 30vh;
+    position: absolute;
+}
+
+
+ /* BURGER SELECTION */
+.allergy {
+    font-weight: bold;
+}
+
+.burgers {
+    background-color: black;
+    color: white;
+    text-align:center;
+    border: 2px dashed white;
+}
+
+.burgertable {
+    margin: 0 auto;
+    padding: 10px;
+    display:grid;
+    grid-gap: 10px;
+    grid-template-columns: 23vw 23vw 23vw;
+}
+
+.pictures {
+    width: 20vw;
+    height: 28vh;
+}
+
+.list {
+    position:relative;
+    text-align: left;
+    left: 30px
+}
+
+
+
+/* CUSTOMER INFORMATION */
+
+.customerinfo {
+    font-size: 20px;
+    border: 2px dashed black;
+}
+
+#payment {
+    font-size: 20px;
+}
+
+#gender {
+    font-size: 20px;
+}
+
+#email {
+    font-size: 20px;
+}
+
+#street {
+    font-size: 20px;
+}
+
+#house {
+    font-size: 20px;
+}
+
+#fullname {
+    font-size: 20px;
+}
+
+
+
+/* BUTTONS*/
+
+#placebutton {
+    font-size:20px;
+}
+
+button:hover {
+    cursor:pointer;
+    color: green;
+}
