@@ -35,3 +35,21 @@ console.log(DoubleCheese.info());
 console.log(TrippleCheese.info());
 console.log(QuadraCheese.info());
 
+let menu = [{'name': FireBurger.info(), 'allergy': 'lactose'}, {'name':TurkeyBurger.info(), 'allergy':'none'}, {'name':DoubleCheese.info(), 'allergy':'none'}, {'name':TrippleCheese.info(), 'allergy':'lactose'}, {'name':QuadraCheese.info(), 'allergy':'lactose'}]
+
+
+/* Could not get the recommended way to work so had to change it a little bit */
+var myElement = document.getElementById("jsLoop");
+var i = 0;
+for (burger in menu)
+{
+        let listItem = document.createElement('li');
+        let listValue = document.createTextNode(menu[i].name);
+        listItem.appendChild(listValue);
+    		if(menu[i].allergy != 'none') {
+        	let allergValue = document.createTextNode(' ' + menu[i].allergy);
+        	listItem.appendChild(allergValue);
+        }
+       	myElement.appendChild(listItem);
+        i++;
+}
