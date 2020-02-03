@@ -23,6 +23,11 @@ let TrippleCheese = new menuItem('TrippleCheese', '1100 kCal', 'gluten and lacos
 
 let QuadraCheese = new menuItem('QuadraCheese', '1250 kCal', 'gluten and lacose', 'meat', 'https://images.eatthismuch.com/site_media/img/331330_dylpill21_acbc0262-ff8f-4a8e-b6d0-25486109a502.png');
 
+document.getElementById("FireBurger").innerHTML = FireBurger.info();
+document.getElementById("TurkeyBurger").innerHTML = TurkeyBurger.info();
+document.getElementById("DoubleCheese").innerHTML = DoubleCheese.info();
+document.getElementById("TrippleCheese").innerHTML = TrippleCheese.info();
+document.getElementById("QuadraCheese").innerHTML = QuadraCheese.info();
 
 console.log(FireBurger.info());
 console.log(TurkeyBurger.info());
