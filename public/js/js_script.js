@@ -66,7 +66,7 @@ document.getElementById("burger3").appendChild(trdList);
 */
 
 
-
+/*
 function menuItem(burger, kcal, all, ing, src) {
     this.name = burger;
     this.kcal = kcal;
@@ -96,7 +96,7 @@ let menu = [{'name': FireBurger.info(), 'allergy': 'lactose'}, {'name':TurkeyBur
 
 
 
-/*
+
 document.getElementById("FireBurger").innerHTML = FireBurger.info();
 document.getElementById("TurkeyBurger").innerHTML = TurkeyBurger.info();
 document.getElementById("DoubleCheese").innerHTML = DoubleCheese.info();

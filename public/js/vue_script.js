@@ -32,12 +32,12 @@ window.onload = function () {
     const vm = new Vue({
 	el: '#burger1',
 	data: {
-	    burger1Header: "Fire Burger",
-	    image1: "https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg",
+	    burger1Header: food[0].name,
+	    image1: food[0].img,
 	    burger1List: [
-		{burger1info: '750 kCal'},
-		{burger1info: 'Contains lactose'},
-		{burger1info: 'Contains gluten'}
+		{burger1info: food[0].kCal},
+		{burger1info: food[0].info1},
+		{burger1info: food[0].info2}
 	    ]
 	}
     });
@@ -47,9 +47,9 @@ window.onload = function () {
 	    burger2Header: "Turkey Burger",
 	    image2: "https://assets.epicurious.com/photos/5748b2ed5a5fbbae31ae4af9/6:4/w_620%2Ch_413/shutterstock_148839410.jpg",
 	    burger2List: [
-		{burger2info: 'Deep fired Turkish turkey'},
-		{burger2info: 'A slice of pink stuff'},
-		{burger2info: 'Shake n-bake gluten-free bread'}
+		{burger2info: food[1].kCal},
+		{burger2info: food[1].info1},
+		{burger2info: food[1].info2}
 	    ]
 	}
     });
@@ -59,9 +59,9 @@ window.onload = function () {
 	    burger3Header: "A Double w/ Cheese",
 	    image3: "https://images.eatthismuch.com/site_media/img/331330_dylpill21_acbc0262-ff8f-4a8e-b6d0-25486109a502.png",
 	    burger3List: [
-		{burger3info: 'Two layers of pure meat'},
-		{burger3info: 'Lots of yummy cheese'},
-		{burger3info: 'Sweet bread bun'}
+		{burger3info: food[2].kCal},
+		{burger3info: food[2].info1},
+		{burger3info: food[2].info2}
 	    ]
 	}
     });
