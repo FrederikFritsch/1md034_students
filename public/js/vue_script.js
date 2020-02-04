@@ -1,3 +1,5 @@
+
+/*
 window.onload = function () {
 
     const vm = new Vue({
@@ -14,7 +16,6 @@ window.onload = function () {
     });
 }
 
-/*
 For the Vue loop to work i used following lines:
    <li v-for="burger in menu">
     {{burger.name}} 

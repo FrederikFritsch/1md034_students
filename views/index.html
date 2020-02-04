@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/js_script.js"></script>
+    <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>BurgerHeaven Online</title>
@@ -16,21 +16,33 @@
 	<img src="https://burgerblog2017.files.wordpress.com/2017/01/burger-header.jpg">
       </div>
       <section class="burgers">
-	<div id="myID">
-	  {{ arbitraryVariableName }}
-	</div>
 	<h2 >Select burger</h2>
 	<p>This is where you execute burger selection</p>
+	<div class="column">
+	  <div id="burger1">
+	    <div id="burger1Header"></div>
+	    <ul id="burger1List"></ul>
+	  </div>
+	  
+	  <div id="burger2">
+	    <div id="burger2Header"></div>
+	    <ul id="burger2List"></ul>
+	  </div>
+	  
+	  <div id="burger3">
+	    <div id="burger3Header"></div>
+	    <div id="burger3List"></div>
+	  </div>
+	  </div>
 	<div class="burgertable">
-
 	  <div class="burger1">
-	      <p>The Fire Burger </p>
-	      <img class="pictures" src="https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg">
-	      <ul class="list">
-		<li> 750 kCal</li>
-		<li> Contains <span class="allergy">lactose</span> </li>
-		<li> Contains <span class="allergy">gluten</span> </li>
-	      </ul>
+	    <p>The Fire Burger </p>
+	    <img class="pictures" src="https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg">
+	    <ul class="list">
+	      <li> 750 kCal</li>
+	      <li> Contains <span class="allergy">lactose</span> </li>
+	      <li> Contains <span class="allergy">gluten</span> </li>
+	    </ul>
 	  </div>
 	  <div class="burger2">
 	    <p>Fried Turkey Burger </p>
