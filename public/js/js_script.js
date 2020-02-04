@@ -1,3 +1,4 @@
+/*
 let fstHeader = document.createElement('P');
 fstHeader.innerHTML = "Fire Burger";
 document.getElementById("burger1").appendChild(fstHeader);
@@ -62,7 +63,7 @@ for(i = 0; i < 3; i++) {
 }
 document.getElementById("burger3").appendChild(trdList);
 
-
+*/
 
 
 

@@ -20,26 +20,41 @@
 	<p>This is where you execute burger selection</p>
 	<div class="column">
 	  <div id="burger1">
-	    <div id="burger1Header"></div>
-	    <ul id="burger1List"></ul>
+	    <div id="burger1Header">{{burger1Header}}</div>
+	    <img class="pictures" v-bind:src="image1">
+	    <ul id="burger1List">
+	      <li v-for="item in burger1List">
+		{{item.burger1info}}
+		</li>
+	    </ul>
 	  </div>
 	  
 	  <div id="burger2">
-	    <div id="burger2Header"></div>
-	    <ul id="burger2List"></ul>
+	    <div id="burger2Header">{{burger2Header}}</div>
+	    <img class="pictures" v-bind:src="image2">
+	    <ul id="burger2List">
+	      <li v-for="item in burger2List">
+		{{item.burger2info}}
+		</li>
+	    </ul>
+	  </div>
+
+	  <div id="burger3">
+	    <div id="burger3Header">{{burger3Header}}</div>
+	    <img class="pictures" v-bind:src="image3">
+	    <ul id="burger3List">
+	      <li v-for="item in burger3List">
+		{{item.burger3info}}
+	      </li>
+	    </ul>
 	  </div>
 	  
-	  <div id="burger3">
-	    <div id="burger3Header"></div>
-	    <div id="burger3List"></div>
-	  </div>
-	  </div>
-	<div class="burgertable">
-	  <div class="burger1">
-	    <p>The Fire Burger </p>
-	    <img class="pictures" src="https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg">
-	    <ul class="list">
-	      <li> 750 kCal</li>
+	  <div class="burgertable">
+	    <div class="burger1">
+	      <p>The Fire Burger </p>
+	      <img class="pictures" src="https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg">
+	      <ul class="list">
+		<li> 750 kCal</li>
 	      <li> Contains <span class="allergy">lactose</span> </li>
 	      <li> Contains <span class="allergy">gluten</span> </li>
 	    </ul>
