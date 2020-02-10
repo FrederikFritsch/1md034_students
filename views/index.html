@@ -5,13 +5,14 @@
     <script src="https://vuejs.org/js/vue.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
-    <script src="js/vue_script.js"></script>
+    <script src="js/vue_script.js" ></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>BurgerHeaven Online</title>
     <meta charset="utf-8"/>
   </head>
   <body>
-    <main>
+    <main id="mainID">
+      
       <div class="header">
 	<h1>Welcome to Burger<br>Heaven Online</h1>
 	<img src="https://burgerblog2017.files.wordpress.com/2017/01/burger-header.jpg">
@@ -28,6 +29,8 @@
 		{{item.burger1info}}
 		</li>
 	    </ul>
+	    <input type="checkbox" id="fireburger" value="Fire Burger" v-model="checkedBurger1">
+	    <label for="fireburger">Click to order</label>
 	  </div>
 	  
 	  <div id="burger2">
@@ -38,6 +41,8 @@
 		{{item.burger2info}}
 		</li>
 	    </ul>
+	    <input type="checkbox" id="turkeyburger" value="Turkey Burger" v-model="checkedBurger2">
+	    <label for="turkeyburger">Click to order</label>
 	  </div>
 
 	  <div id="burger3">
@@ -48,37 +53,9 @@
 		{{item.burger3info}}
 	      </li>
 	    </ul>
+	    <input type="checkbox" id="doublecheese" value="Double Cheese" v-model="checkedBurger3">
+	    <label for="doublecheese">Click to order</label>
 	  </div>
-	  
-	  <!--div class="burgertable">
-	    <div class="burger1">
-	      <p>The Fire Burger </p>
-	      <img class="pictures" src="https://image.shutterstock.com/image-photo/closeup-home-made-tasty-burger-600w-1291051606.jpg">
-	      <ul class="list">
-		<li> 750 kCal</li>
-	      <li> Contains <span class="allergy">lactose</span> </li>
-	      <li> Contains <span class="allergy">gluten</span> </li>
-	    </ul>
-	  </div>
-	  <div class="burger2">
-	    <p>Fried Turkey Burger </p>
-	    <img class="pictures" src="https://assets.epicurious.com/photos/5748b2ed5a5fbbae31ae4af9/6:4/w_620%2Ch_413/shutterstock_148839410.jpg">
-	    <ul class="list">
-	      <li> Deep fired Turkish turkey</li>
-	      <li> A slice of pink stuff (contains <span class="allergy">lactose</span>)</li>
-	      <li> Shake n-bake gluten-free bread</li>
-	    </ul>
-	  </div>
-	  <div class="burger3">
-	    <p>A Double w/ Cheese </p>
-	    <img class="pictures" src="https://images.eatthismuch.com/site_media/img/331330_dylpill21_acbc0262-ff8f-4a8e-b6d0-25486109a502.png">
-	    <ul class="list">
-	      <li> Two layers of pure meat</li>
-	      <li> Lots of yummy cheese (contains <span class="allergy">lactose</span>) </li>
-	      <li> Sweet bread bun (contains <span class="allergy">gluten</span>) </li>
-	    </ul>
-	  </div>
-	</div !-->
       </section>
       
       <section class="customerinfo">
@@ -88,39 +65,57 @@
 	<div class="info">
 	  <p>
 	    <label for="fullname">Full Name</label><br>
-	    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
+	    <input v-model="fullName" id="fullname" required="required" placeholder="First- and Last name" />
 	  </p>
 	  <p >
 	    <label for="email">E-mail</label><br>
-	    <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+	    <input v-model="mail" id="email"  required="required" placeholder="E-mail address" />
 	  </p>
 	  
 	  <p>
 	    <label for="street">Street</label><br>
-	    <input type="text" id="street" name="s" placeholder="Street name" />
+	    <input v-model="streetName" id="street" required="required" placeholder="Street name" />
 	</p>
 	  <p>
 	    <label for="house">House</label><br>
-	    <input type="number" id="house" name="h" placeholder="House number" />
+	    <input v-model="houseNumber" id="house" required="required" placeholder="House number" />
 	  </p>
-	  </div>
 	<p>
-	  <label for="payment">Payment methods</label><br />
-	  <select id="payment" name="p">
+	  <label for="payment">Payment methods</label><br>
+	  <select v-model="Payment" id="payment" placeholder="Choose payment method">
             <option>Credit card</option>
             <option>American Express</option>
             <option>Cash at delivery</option>
             <option>PayPal</option>
           </select>
-	<p><br>
-	  <label for="gender">Gender</label><br>
-	  <input type="radio" id="gender" name="gender"  /> Male<br>
-	  <input type="radio" id="gender" name="gender"  /> Female<br>
-	  <input type="radio" id="gender" name="gender"  /> Non-binary<br>
-	  <input type="radio" id="gender" name="gender" checked="checked" /> Undisclosed<br>
+	<p>
+	  <input type="radio" id="Male" value="Male" v-model="Gender">
+	  <label for="Male">Male</label>
+	  <br>
+	  <input type="radio" id="Female" value="Female" v-model="Gender">
+	  <label for="Male">Female</label>
+	  <br>
+	  <input type="radio" id="Non-binary" value="Non-binary" v-model="Gender">
+	  <label for="Non-binary">Non-binary</label>
+	  <br>
+	  <input type="radio" id="Undisclosed" value="Undisclosed" v-model="Gender">
+	  <label for="Undisclosed">Undisclosed</label>
+	  <br>
 	</p>
-      </section>
-      <button id="placebutton" type="submit">Place my order</button>
+	</div>
+	<div id="button">
+	  <button v-on:click="showData=true;" id="placebutton" type="submit">Place my order</button>
+	  <p v-if="showData">{{fullName}}</p>
+	  <p v-if="showData">{{mail}}</p>
+	  <p v-if="showData">{{streetName}}</p>
+	  <p v-if="showData">{{houseNumber}}</p>
+	  <p v-if="showData">{{Payment}}</p>
+	  <p v-if="showData">{{Gender}}</p>
+	  <p v-if="showData">{{checkedBurger1}}</p>
+	  <p v-if="showData">{{checkedBurger2}}</p>
+	  <p v-if="showData">{{checkedBurger3}}</p>
+	</div>
+      </section>   
     </main>
     <footer>
       <HR>

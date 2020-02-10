@@ -1,4 +1,24 @@
 /*
+let myButton = document.getElementById('placebutton')
+
+myButton.onclick = function () {
+    console.log(document.getElementById("fullname").value);
+    console.log(document.getElementById("email").value);
+    console.log(document.getElementById("street").value);
+    console.log(document.getElementById("house").value);
+    console.log(document.getElementById("payment").value);
+    
+    var radios = document.getElementsByName("gender");
+    for(var i = 0; i < radios.length; i++) {
+	if(radios[i].checked)
+	    console.log(radios[i].value)
+    }
+}
+
+
+
+
+
 let fstHeader = document.createElement('P');
 fstHeader.innerHTML = "Fire Burger";
 document.getElementById("burger1").appendChild(fstHeader);
@@ -110,8 +130,8 @@ console.log(DoubleCheese.info());
 console.log(TrippleCheese.info());
 console.log(QuadraCheese.info());
 */
-
-/* Could not get the recommended way to work so had to change it a little bit 
+/*
+ Could not get the recommended way to work so had to change it a little bit 
 var myElement = document.getElementById("jsLoop");
 var i = 0;
 for (burger in menu)

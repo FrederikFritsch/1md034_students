@@ -1,6 +1,5 @@
 
 /*
-
   window.onload = function () {
 
   const vm = new Vue({
@@ -23,7 +22,6 @@
   {{burger.name}} 
   <span v-if="burger.allergy.localeCompare('none') != 0"> {{burger.allergy}} </span>
   </li>
-
 */
 
 
@@ -65,4 +63,24 @@ window.onload = function () {
 	    ]
 	}
     });
+
+    const vm4 = new Vue({
+	el: '#mainID',
+	data: {
+	    showData: false,
+	    fullName: '',
+	    mail:'',
+	    streetName:'',
+	    houseNumber:'',
+	    Payment:'',
+	    Gender:'',
+	    checkedBurger1:'',
+	    checkedBurger2:'',
+	    checkedBurger3:''
+	}
+    });
+    
 }
+
+
+
