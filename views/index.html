@@ -2,10 +2,14 @@
 
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://vuejs.org/js/vue.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
-    <script src="js/vue_script.js" ></script>
+    <script src="js/vue_script.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>BurgerHeaven Online</title>
     <meta charset="utf-8"/>
@@ -29,7 +33,7 @@
 		{{item.burger1info}}
 		</li>
 	    </ul>
-	    <input type="checkbox" id="fireburger" value="Fire Burger" v-model="checkedBurger1">
+	    <input type="checkbox" id="fireburger" value="Fire Burger">
 	    <label for="fireburger">Click to order</label>
 	  </div>
 	  
@@ -41,7 +45,7 @@
 		{{item.burger2info}}
 		</li>
 	    </ul>
-	    <input type="checkbox" id="turkeyburger" value="Turkey Burger" v-model="checkedBurger2">
+	    <input type="checkbox" id="turkeyburger" value="Turkey Burger">
 	    <label for="turkeyburger">Click to order</label>
 	  </div>
 
@@ -53,7 +57,7 @@
 		{{item.burger3info}}
 	      </li>
 	    </ul>
-	    <input type="checkbox" id="doublecheese" value="Double Cheese" v-model="checkedBurger3">
+	    <input type="checkbox" id="doublecheese" value="Double Cheese">
 	    <label for="doublecheese">Click to order</label>
 	  </div>
       </section>
@@ -75,7 +79,7 @@
 	  <p>
 	    <label for="street">Street</label><br>
 	    <input v-model="streetName" id="street" required="required" placeholder="Street name" />
-	</p>
+	  </p>
 	  <p>
 	    <label for="house">House</label><br>
 	    <input v-model="houseNumber" id="house" required="required" placeholder="House number" />
@@ -103,17 +107,28 @@
 	  <br>
 	</p>
 	</div>
+	<!--h1> Click in the map! </h1>
+	<a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+	<div class="view-box">
+	  <div id="dots" v-on:click="addOrder">
+            <div 
+              v-for="(order, key) in orders"
+              v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+              {{key}}
+            </div>
+	  </div!-->
+	
 	<div id="button">
-	  <button v-on:click="showData=true;" id="placebutton" type="submit">Place my order</button>
-	  <p v-if="showData">{{fullName}}</p>
-	  <p v-if="showData">{{mail}}</p>
-	  <p v-if="showData">{{streetName}}</p>
-	  <p v-if="showData">{{houseNumber}}</p>
-	  <p v-if="showData">{{Payment}}</p>
-	  <p v-if="showData">{{Gender}}</p>
-	  <p v-if="showData">{{checkedBurger1}}</p>
-	  <p v-if="showData">{{checkedBurger2}}</p>
-	  <p v-if="showData">{{checkedBurger3}}</p>
+	  <button v-on:click="markdown();" id="placebutton" type="submit">Place my order</button>
+	  <p>{{fullName}}</p>
+	  <p>{{mail}}</p>
+	  <p>{{streetName}}</p>
+	  <p>{{houseNumber}}</p>
+	  <p>{{Payment}}</p>
+	  <p>{{showGender}}</p>
+	  <p>{{Burger1IsChecked}}</p>
+	  <p>{{Burger2IsChecked}}</p>
+	  <p>{{Burger3IsChecked}}</p>
 	</div>
       </section>   
     </main>

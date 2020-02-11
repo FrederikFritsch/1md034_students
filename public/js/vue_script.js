@@ -27,7 +27,7 @@
 
 window.onload = function () {
 
-    const vm = new Vue({
+    const vm0 = new Vue({
 	el: '#burger1',
 	data: {
 	    burger1Header: food[0].name,
@@ -37,6 +37,7 @@ window.onload = function () {
 		{burger1info: food[0].info1},
 		{burger1info: food[0].info2}
 	    ]
+	    
 	}
     });
     const vm2 = new Vue({
@@ -64,23 +65,64 @@ window.onload = function () {
 	}
     });
 
-    const vm4 = new Vue({
-	el: '#mainID',
+    const vm35 = new Vue({
+	el:'.info',
 	data: {
-	    showData: false,
+	    Gender:''
+	}
+    });
+    
+    const vm4 = new Vue({
+	el: '#button',
+	data: {
 	    fullName: '',
 	    mail:'',
 	    streetName:'',
 	    houseNumber:'',
 	    Payment:'',
-	    Gender:'',
-	    checkedBurger1:'',
-	    checkedBurger2:'',
-	    checkedBurger3:''
+	    showGender:'',
+	    Burger1IsChecked:'',
+	    Burger2IsChecked:'',
+	    Burger3IsChecked:''
+	},
+	
+	methods: {
+	    markdown: function() {
+		vm4.fullName = document.getElementById("fullname").value;
+		vm4.mail = document.getElementById("email").value;
+		vm4.streetName = document.getElementById("street").value;
+		vm4.houseNumber = document.getElementById("house").value;
+		vm4.Payment = document.getElementById("payment").value;
+		vm4.showGender = vm35.Gender;
+		if(document.getElementById("fireburger").checked)
+		{
+		    vm4.Burger1IsChecked = "Fire Burger";
+		}
+		else
+		{
+		    vm4.Burger1IsChecked = "";
+		}
+
+		if(document.getElementById("turkeyburger").checked)
+		{
+		    vm4.Burger2IsChecked = "Turkey Burger";
+		}
+		else
+		{
+		    vm4.Burger2IsChecked = "";
+		}
+
+		if(document.getElementById("doublecheese").checked)
+		{
+		    vm4.Burger3IsChecked = "Double Cheese";
+		}
+		else
+		{
+		    vm4.Burger3IsChecked = "";
+		}
+	    }
+	    
 	}
     });
     
 }
-
-
-
