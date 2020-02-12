@@ -107,30 +107,27 @@
 	  <br>
 	</p>
 	</div>
-	<h1> Click in the map! </h1>
+	<h2> Click in the map! </h2>
 	<a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
 	<div class="view-box">
-	  <div id="dots" v-on:click="addOrder">
+	  <div id="dots" v-on:click="displayOrder">
             <div 
-              v-for="(order, key) in orders"
-              v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-              {{key}}
+              v-bind:style="{ left: localOrder.x + 'px', top: localOrder.y + 'px'}">
+              {{"T"}}
             </div>
 	  </div>
       </section>
-	<div id="button">
-	  <button v-on:click="markdown();" id="placebutton" type="submit">Place my order</button>
-	  <p>{{fullName}}</p>
-	  <p>{{mail}}</p>
-	  <!--p>{{streetName}}</p>
-	      <p>{{houseNumber}}</p!-->
-	  <p>{{Payment}}</p>
-	  <p>{{showGender}}</p>
-	  <p>{{Burger1IsChecked}}</p>
-	  <p>{{Burger2IsChecked}}</p>
-	  <p>{{Burger3IsChecked}}</p>
-	</div>
-   
+      <div id="button">
+	<button v-on:click="markdown(); addOrder()" id="placebutton" type="submit">Place my order</button>
+	<!--p>{{fullName}}</p>
+	<p>{{mail}}</p>
+	<p>{{Payment}}</p>
+	<p>{{showGender}}</p>
+	<p>{{Burger1IsChecked}}</p>
+	<p>{{Burger2IsChecked}}</p>
+	<p>{{Burger3IsChecked}}</p!-->
+      </div>
+      
     </main>
     <footer>
       <HR>
