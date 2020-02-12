@@ -78,6 +78,7 @@ window.onload = function () {
     const vm4 = new Vue({
 	el: '#button',
 	data: {
+	    showOrder: false,
 	    fullName: '',
 	    mail:'',
 	    Payment:'',
@@ -137,6 +138,7 @@ window.onload = function () {
 			y: vm.localOrder.y,
 		    },
 		    orderItems: [vm4.Burger1IsChecked + ' ' + vm4.Burger2IsChecked + ' ' + vm4.Burger3IsChecked],
+		    orderInfo: [vm4.fullName + ' (' + vm4.mail + ', ' + vm4.Payment + ', ' + vm4.showGender + ')'],
 		});
 	    },
 	    

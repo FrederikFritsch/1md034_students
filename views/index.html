@@ -118,14 +118,17 @@
 	  </div>
       </section>
       <div id="button">
-	<button v-on:click="markdown(); addOrder()" id="placebutton" type="submit">Place my order</button>
-	<!--p>{{fullName}}</p>
+	<button v-on:click="markdown(); addOrder(); showOrder=true;" id="placebutton" type="submit">Place my order</button>
+	<h2 v-if="showOrder">Order confirmation</h2>
+	<h3 v-if="showOrder">Customer information</h3>
+	<p>{{fullName}}</p>
 	<p>{{mail}}</p>
 	<p>{{Payment}}</p>
 	<p>{{showGender}}</p>
+	<h3 v-if="showOrder">Order summary</h3>
 	<p>{{Burger1IsChecked}}</p>
 	<p>{{Burger2IsChecked}}</p>
-	<p>{{Burger3IsChecked}}</p!-->
+	<p>{{Burger3IsChecked}}</p>
       </div>
       
     </main>
