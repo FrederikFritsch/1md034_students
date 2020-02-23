@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -24,44 +23,26 @@
       <section class="burgers">
 	<h2 >Select burger</h2>
 	<p>This is where you execute burger selection</p>
-	<div class="column">
-	  <div id="burger1">
-	    <div id="burger1Header">{{burger1Header}}</div>
-	    <img class="pictures" v-bind:src="image1">
-	    <ul id="burger1List">
-	      <li v-for="item in burger1List">
-		{{item.burger1info}}
-		</li>
-	    </ul>
-	    <input type="checkbox" id="fireburger" value="Fire Burger">
-	    <label for="fireburger">Click to order</label>
-	  </div>
-	  
-	  <div id="burger2">
-	    <div id="burger2Header">{{burger2Header}}</div>
-	    <img class="pictures" v-bind:src="image2">
-	    <ul id="burger2List">
-	      <li v-for="item in burger2List">
-		{{item.burger2info}}
-		</li>
-	    </ul>
-	    <input type="checkbox" id="turkeyburger" value="Turkey Burger">
-	    <label for="turkeyburger">Click to order</label>
-	  </div>
-
-	  <div id="burger3">
-	    <div id="burger3Header">{{burger3Header}}</div>
-	    <img class="pictures" v-bind:src="image3">
-	    <ul id="burger3List">
-	      <li v-for="item in burger3List">
-		{{item.burger3info}}
+	<div class="column" id="dynamicBurger">
+	  <div v-for="item in menu">
+	    <p>{{item.name}}</p>
+	    <img class="pictures" v-bind:src="item.img">
+	    <ul class="list">
+	      <li>
+		{{item.kCal}}
+	      </li>
+	      <li>
+		{{item.info1}}
+	      </li>
+	      <li>
+		{{item.info2}}
 	      </li>
 	    </ul>
-	    <input type="checkbox" id="doublecheese" value="Double Cheese">
-	    <label for="doublecheese">Click to order</label>
+	    <label>Check to order</label>
+	    <input type="checkbox" v-bind:id="item.id">
 	  </div>
-      </section>
-      
+	</div>
+      </section>    
       <section class="customerinfo">
 	<h2>Customer information</h2>
 	<p>This is where you provide necessary information.</p>
@@ -75,37 +56,28 @@
 	    <label for="email">E-mail</label><br>
 	    <input v-model="mail" id="email"  required="required" placeholder="E-mail address" />
 	  </p>
-	  
-	  <!--p>
-	    <label for="street">Street</label><br>
-	    <input v-model="streetName" id="street" required="required" placeholder="Street name" />
-	  </p>
 	  <p>
-	    <label for="house">House</label><br>
-	    <input v-model="houseNumber" id="house" required="required" placeholder="House number" />
-	  </p!-->
-	<p>
-	  <label for="payment">Payment methods</label><br>
-	  <select v-model="Payment" id="payment" placeholder="Choose payment method">
-            <option>Credit card</option>
-            <option>American Express</option>
-            <option>Cash at delivery</option>
-            <option>PayPal</option>
-          </select>
-	<p>
-	  <input type="radio" id="Male" value="Male" v-model="Gender">
-	  <label for="Male">Male</label>
-	  <br>
-	  <input type="radio" id="Female" value="Female" v-model="Gender">
-	  <label for="Male">Female</label>
-	  <br>
-	  <input type="radio" id="Non-binary" value="Non-binary" v-model="Gender">
-	  <label for="Non-binary">Non-binary</label>
-	  <br>
-	  <input type="radio" id="Undisclosed" value="Undisclosed" v-model="Gender">
-	  <label for="Undisclosed">Undisclosed</label>
-	  <br>
-	</p>
+	    <label for="payment">Payment methods</label><br>
+	    <select v-model="Payment" id="payment" placeholder="Choose payment method">
+              <option>Credit card</option>
+              <option>American Express</option>
+              <option>Cash at delivery</option>
+              <option>PayPal</option>
+            </select>
+	  <p>
+	    <input type="radio" id="Male" value="Male" v-model="Gender">
+	    <label for="Male">Male</label>
+	    <br>
+	    <input type="radio" id="Female" value="Female" v-model="Gender">
+	    <label for="Male">Female</label>
+	    <br>
+	    <input type="radio" id="Non-binary" value="Non-binary" v-model="Gender">
+	    <label for="Non-binary">Non-binary</label>
+	    <br>
+	    <input type="radio" id="Undisclosed" value="Undisclosed" v-model="Gender">
+	    <label for="Undisclosed">Undisclosed</label>
+	    <br>
+	  </p>
 	</div>
 	<h2> Click in the map! </h2>
 	<a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
@@ -116,9 +88,10 @@
               {{"T"}}
             </div>
 	  </div>
+	</div>
       </section>
       <div id="button">
-	<button v-on:click="markdown(); addOrder(); showOrder=true;" id="placebutton" type="submit">Place my order</button>
+	<button v-on:click="markdone(); addOrder(); showOrder=true;" id="placebutton" type="submit">Place my order</button>
 	<h2 v-if="showOrder">Order confirmation</h2>
 	<h3 v-if="showOrder">Customer information</h3>
 	<p>{{fullName}}</p>
@@ -126,11 +99,8 @@
 	<p>{{Payment}}</p>
 	<p>{{showGender}}</p>
 	<h3 v-if="showOrder">Order summary</h3>
-	<p>{{Burger1IsChecked}}</p>
-	<p>{{Burger2IsChecked}}</p>
-	<p>{{Burger3IsChecked}}</p>
-      </div>
-      
+	<p>{{checkedBurgers}}</p>
+      </div>      
     </main>
     <footer>
       <HR>
